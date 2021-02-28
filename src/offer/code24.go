@@ -19,7 +19,7 @@ func reverseList(head *ListNode) *ListNode {
 		curr = next
 		/* 化简写法，可读性不佳
 		curr, curr.Next, newHeader = curr.Next, newHeader, curr
-		 */
+		*/
 	}
 	return newHeader
 }

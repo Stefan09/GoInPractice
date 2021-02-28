@@ -15,7 +15,7 @@ func numWays(n int) int {
 	arr[0] = 0
 	arr[1] = 1
 	for iter := 2; iter <= n; iter++ {
-		arr[iter] = (arr[iter-1] + arr[iter-2]) % (1e9+7)
+		arr[iter] = (arr[iter-1] + arr[iter-2]) % (1e9 + 7)
 	}
 	return arr[n]
 }

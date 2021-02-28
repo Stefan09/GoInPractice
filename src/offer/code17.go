@@ -7,7 +7,7 @@ import "math"
 */
 
 func printNumbers(n int) []int {
-	top := int(math.Pow10(n))-1
+	top := int(math.Pow10(n)) - 1
 	var arrResult []int
 	for i := 1; i <= top; i++ {
 		arrResult = append(arrResult, i)

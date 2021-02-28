@@ -23,9 +23,9 @@ func Exchange(nums []int) []int {
 		}
 
 		for left < right {
-			if nums[right] % 2 == 0 {
+			if nums[right]%2 == 0 {
 				right--
-			}else{
+			} else {
 				break
 			}
 		}

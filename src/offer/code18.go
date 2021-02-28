@@ -11,7 +11,7 @@ func deleteNode(head *ListNode, val int) *ListNode {
 		return nil
 	}
 	//使用头副本，便于返回链表头
-	copyHead := &ListNode{Next: head,}
+	copyHead := &ListNode{Next: head}
 	pre := copyHead
 	iter := copyHead.Next
 	for iter != nil {

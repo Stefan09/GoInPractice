@@ -37,7 +37,7 @@ func ReversePrint2(head *ListNode) []int {
 		stack.PushFront(iter.Val)
 		iter = iter.Next
 	}
-	for stack.Len() != 0{
+	for stack.Len() != 0 {
 		res = append(res, stack.Remove(stack.Front()).(int))
 	}
 	return res

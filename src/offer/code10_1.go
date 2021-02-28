@@ -32,7 +32,7 @@ func Fib2(n int) int {
 	}
 	pre1, pre2 := 0, 1
 	for i := 2; i <= n; i++ {
-		pre1, pre2 = pre2 % int(1e9+7), (pre1+pre2) % int(1e9+7)
+		pre1, pre2 = pre2%int(1e9+7), (pre1+pre2)%int(1e9+7)
 	}
 	return pre2
 }

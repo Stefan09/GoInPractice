@@ -33,7 +33,7 @@ func HammingWeight2(num uint32) int {
 	}
 	counter := 0
 	for num != 0 {
-		if num % 2 == 1 {
+		if num%2 == 1 {
 			counter++
 		}
 		num >>= 1

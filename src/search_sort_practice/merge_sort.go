@@ -1,10 +1,10 @@
-package sort_practice
+package search_sort_practice
 
-//1. 划分子数组
-//2. 子数组排序
-//3. merge
+// 1. 划分子数组
+// 2. 子数组排序
+// 3. merge
 func MergeSort(arr []int) []int {
-	//注意递归出口
+	// 注意递归出口
 	if len(arr) < 2 {
 		return arr
 	}
@@ -19,8 +19,8 @@ func MergeSort(arr []int) []int {
 	return result
 }
 
-//子数组归并
-func merge(left , right []int) []int {
+// 子数组归并
+func merge(left, right []int) []int {
 	result := make([]int, 0)
 	leftIter, rightIter := 0, 0
 
@@ -28,7 +28,7 @@ func merge(left , right []int) []int {
 		if left[leftIter] <= right[rightIter] {
 			result = append(result, left[leftIter])
 			leftIter++
-		}else{
+		} else {
 			result = append(result, right[rightIter])
 			rightIter++
 		}
@@ -44,4 +44,3 @@ func merge(left , right []int) []int {
 
 	return result
 }
-

@@ -15,11 +15,11 @@ func FindNumberIn2DArray(matrix [][]int, target int) bool {
 	var xIndex, yIndex = 0, len(matrix) - 1
 
 	for xIndex < len(matrix[0]) && yIndex >= 0 {
-		if target == matrix[yIndex][xIndex]{
+		if target == matrix[yIndex][xIndex] {
 			return true
-		}else if target > matrix[yIndex][xIndex]{
+		} else if target > matrix[yIndex][xIndex] {
 			xIndex++
-		}else{
+		} else {
 			yIndex--
 		}
 	}
