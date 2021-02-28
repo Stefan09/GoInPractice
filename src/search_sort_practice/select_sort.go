@@ -1,4 +1,4 @@
-package sort_practice
+package search_sort_practice
 
 func SelectSort(arr []int) {
 	for i := 0; i < len(arr)-1; i++ {

@@ -1,4 +1,4 @@
-package sort_practice
+package search_sort_practice
 
 //调整：从上至下调整
 //注意参数传递，需要限制下界
@@ -8,18 +8,18 @@ func HeapSort(arr []int) {
 	}
 
 	buildHeap(arr)
-	。
+
 	//todo 根据需要使用堆
 }
 
-//建堆
+//建堆 自下而上
 func buildHeap(arr []int) {
 	for iter := (len(arr) - 1) / 2; iter >= 0; iter-- {
 		maxHeap(arr, iter, len(arr)-1)
 	}
 }
 
-//堆调整
+//堆调整 自上而下
 func maxHeap(arr []int, curRoot, end int) {
 	left := 2*curRoot + 1
 	right := 2*curRoot + 2

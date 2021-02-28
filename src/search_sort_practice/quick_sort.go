@@ -1,4 +1,4 @@
-package sort_practice
+package search_sort_practice
 
 func QuickSort(arr []int, low, high int) {
 	if len(arr) == 0 || low >= high {

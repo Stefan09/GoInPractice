@@ -1,4 +1,4 @@
-package sort_practice
+package search_sort_practice
 
 //1. 划分子数组
 //2. 子数组排序
