@@ -1,4 +1,4 @@
-package linklist_practice
+package linklist
 
 import "offer"
 

@@ -7,7 +7,7 @@ tips：golang中很多数据结构都没有像java一样封装实现，设计者
 
 思考：有符号数的处理
 */
-package search_sort_practice
+package search_sort
 
 type BitMap []byte
 

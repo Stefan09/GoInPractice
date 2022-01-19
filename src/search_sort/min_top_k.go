@@ -1,4 +1,4 @@
-package search_sort_practice
+package search_sort
 
 import "sort"
 

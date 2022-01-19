@@ -1,4 +1,4 @@
-package search_sort_practice
+package search_sort
 
 //调整：从上至下调整
 //注意参数传递，需要限制下界

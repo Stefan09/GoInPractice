@@ -1,4 +1,4 @@
-package search_sort_practice
+package search_sort
 
 /**
 冒泡排序的理解方式很多，例如：

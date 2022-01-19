@@ -12,7 +12,7 @@
 3. 检索路线呈阶梯下降状
  */
 
-package linklist_practice
+package linklist
 
 import (
 	"fmt"

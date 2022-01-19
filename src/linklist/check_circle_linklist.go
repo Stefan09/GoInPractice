@@ -1,4 +1,4 @@
-package linklist_practice
+package linklist
 
 func hasCycle(head *ListNode) bool {
 	if head == nil {

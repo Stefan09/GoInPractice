@@ -1,4 +1,4 @@
-package search_sort_practice
+package search_sort
 
 func InsertSort(arr []int) {
 	for i := 1; i < len(arr); i++ {
