@@ -21,22 +21,28 @@ https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
 1 <= sz <= 30
 0 <= Node.val <= 100
 1 <= n <= sz
- */
+*/
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	emptyHead := &ListNode{
-		Val:  0,
-		Next: head,
+	if head == nil {
+		return nil
 	}
-	pre, t, r := emptyHead, head, head
-	for i := 1; i <= n; i++ {
-		t = t.Next
+	// 设置一个虚拟头
+	fakeHead := &ListNode{Val: -1, Next: head}
+	pre, slow, fast := fakeHead, head, head
+	i := 1
+	for ; i <= n-1 && fast != nil; i++ {
+		fast = fast.Next
 	}
-	for ; t != nil; t = t.Next {
-		pre = r
-		r = r.Next
+	if i < n { // n大于链表长度
+		return head
 	}
-	pre.Next = r.Next
+	for fast != nil && fast.Next != nil {
+		fast = fast.Next
+		slow = slow.Next
+		pre = pre.Next
+	}
+	pre.Next = slow.Next
 
-	return emptyHead.Next
+	return fakeHead.Next
 }
