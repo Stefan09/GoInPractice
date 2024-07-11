@@ -10,6 +10,13 @@ type ListNode struct {
 	Next *ListNode
 }
 
+// Definition for a binary tree node.
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 type char uint8
 
 // list node min heap
