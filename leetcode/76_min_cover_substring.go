@@ -1,6 +1,7 @@
 package leetcode
 
 /*
+最小覆盖子串
 给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 "" 。
 
 注意：
@@ -40,21 +41,22 @@ func MinWindow(s string, t string) string {
 	start, length := 0, len(s)+1                              // 记录子串：起始位置 子串长度初始无限大
 	left, right := 0, 0                                       // 窗口双端
 	charSet, window := make(map[byte]int), make(map[byte]int) // 统计字符频次, 窗口中字符统计
-	coverTimes := 0                                           // 覆盖字符数
+	coverTimes := 0                                           // 覆盖字符数：字符和出现次数均匹配
 
 	for i := 0; i < len(t); i++ {
 		charSet[t[i]]++
 	}
+
 	for right < len(s) {
 		if coverTimes < len(charSet) {
 			window[s[right]]++
-			if window[s[right]] == charSet[s[right]] {
+			if window[s[right]] == charSet[s[right]] { // 边维护边判断
 				coverTimes++
 			}
 		}
 		right++
 		for coverTimes == len(charSet) {
-			if right-left < length{
+			if right-left < length {
 				start, length = left, right-left
 			}
 			if window[s[left]] == charSet[s[left]] {

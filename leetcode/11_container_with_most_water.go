@@ -1,6 +1,6 @@
 package leetcode
 
-/**
+/**盛最多水的容器
 https://leetcode-cn.com/problems/container-with-most-water/
 给定一个长度为 n 的整数数组height。有n条垂线，第 i 条线的两个端点是(i, 0)和(i, height[i])。
 找出其中的两条线，使得它们与x轴共同构成的容器可以容纳最多的水。
@@ -35,10 +35,11 @@ n == height.length
 }*/
 
 // double pointer
+// 指针总是要移动的，索性就按照隔板长度作为移动左右指针的依据
 func maxArea(height []int) int {
 	max := 0
 	for left, right := 0, len(height)-1; left < right; {
-		a := (right -left) * min(height[left], height[right])
+		a := (right - left) * min(height[left], height[right])
 		if a > max {
 			max = a
 		}

@@ -20,29 +20,25 @@ https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
 链表中结点的数目为 sz
 1 <= sz <= 30
 0 <= Node.val <= 100
-1 <= n <= sz
+1 <= n <= sz 不会有n的非法输入
 */
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	if head == nil {
 		return nil
 	}
-	// 设置一个虚拟头
+
 	fakeHead := &ListNode{Val: -1, Next: head}
-	pre, slow, fast := fakeHead, head, head
-	i := 1
-	for ; i <= n-1 && fast != nil; i++ {
+	pre, cur, fast := fakeHead, head, head
+	for i := 0; i < n-1; i++ {
 		fast = fast.Next
 	}
-	if i < n { // n大于链表长度
-		return head
-	}
-	for fast != nil && fast.Next != nil {
-		fast = fast.Next
-		slow = slow.Next
+	for fast.Next != nil {
 		pre = pre.Next
+		cur = cur.Next
+		fast = fast.Next
 	}
-	pre.Next = slow.Next
+	pre.Next = cur.Next
 
 	return fakeHead.Next
 }

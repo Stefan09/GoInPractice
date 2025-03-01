@@ -2,7 +2,7 @@ package leetcode
 
 import "sort"
 
-/**
+/** 三数之和
 https://leetcode-cn.com/problems/3sum/
 给你一个包含 n 个整数的数组nums，判断nums中是否存在三个元素 a，b，c ，使得a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
 注意：答案中不可以包含重复的三元组。
@@ -22,7 +22,7 @@ https://leetcode-cn.com/problems/3sum/
 提示：
 0 <= nums.length <= 3000
 -105 <= nums[i] <= 105
- */
+*/
 
 func ThreeSum(nums []int) [][]int {
 	res := make([][]int, 0)
@@ -31,27 +31,27 @@ func ThreeSum(nums []int) [][]int {
 	}
 
 	// brute force time out because of O(n^3)
-	// use double pointer
+	// sort array aim to use double pointer
 	sort.Ints(nums)
-	for i := 0; i <= len(nums)-3; i++ {
+	for i := 0; i <= len(nums)-3; i++ { // i是左指针的起点
+		// 左指针已经大于0 不可能再有合适的三元组
 		if nums[i] > 0 {
 			break
 		}
+		// 确保三元组不重复
 		if i > 0 && nums[i] == nums[i-1] {
 			continue
 		}
-		for left, right := i+1,len(nums)-1; left < right; {
-			sum := nums[i] + nums[left] + nums[right]
-			if sum == 0 {
+
+		for left, right := i+1, len(nums)-1; left < right; {
+			if sum := nums[i] + nums[left] + nums[right]; sum == 0 {
 				res = append(res, []int{nums[i], nums[left], nums[right]})
 				left++
 				right--
-				// 结果集去重 i,left,right不可遗漏
-				for left < right && nums[left] == nums[left-1] {
-					left++
+				// 结果集去重 i,left,right不可重复
+				for ; left < right && nums[left] == nums[left-1]; left++ {
 				}
-				for left < right && nums[right] == nums[right+1] {
-					right--
+				for ; left < right && nums[right] == nums[right+1]; right-- {
 				}
 			} else if sum < 0 {
 				left += 1
